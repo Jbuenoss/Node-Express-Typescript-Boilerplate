@@ -11,14 +11,14 @@ const logger = winston.createLogger({
             format: 'YYYY-MM-DD hh:mm:ss',
         }),
         align(),
-        logFormat
+        logFormat,
     ),
     transports: [
         new winston.transports.Console({
-            format: combine(colorize({ all: true }), logFormat)
+            format: combine(colorize({ all: true }), logFormat),
         }),
-        new winston.transports.File({ filename: 'logs/all.log' })
-    ]
+        new winston.transports.File({ filename: 'logs/all.log' }),
+    ],
 });
 
 export default logger;

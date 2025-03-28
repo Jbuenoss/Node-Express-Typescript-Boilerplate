@@ -1,5 +1,5 @@
-import morgan from "morgan";
-import Logger from "../config/logger";
+import morgan from 'morgan';
+import Logger from '../config/logger';
 import { Response } from 'express';
 
 const successResponseFormat = `method :url :status - :response-time ms`;
@@ -17,4 +17,4 @@ const errorHandler = morgan(errorResponseFormat, {
     stream: { write: (message) => Logger.error(message.trim()) },
 });
 
-export {successHandler, errorHandler};
+export { successHandler, errorHandler };
